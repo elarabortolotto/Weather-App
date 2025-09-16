@@ -5,10 +5,17 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
 }
 
 .weatherForm{
     margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
 }
 
 .cityInput{
@@ -18,7 +25,8 @@ body{
     border: 2px solid hsla(0, 0%, 20%, 0.3);
     border-radius: 10px;
     margin: 10px;
-    width: 300px;
+    flex: 1;
+    min-width: 180px;
 }
 
 button[type="submit"]{
@@ -30,6 +38,7 @@ button[type="submit"]{
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 button[type="submit"]:hover{
@@ -41,7 +50,9 @@ button[type="submit"]:hover{
     padding: 50px;
     border-radius: 10px;
     box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.5);
-    min-width: 300px;
+    min-width: 280px;
+    max-width: 500px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,4 +95,28 @@ p{
     font-size: 2.5rem;
     font-weight: bold;
     color: hsla(0, 0%, 0%, 0.75);
+}
+
+/* 🔹 Responsividade */
+@media (max-width: 600px) {
+    .cityInput, button[type="submit"] {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+
+    .cityDisplay, .tempDisplay {
+        font-size: 2.5rem;
+    }
+
+    .descDisplay {
+        font-size: 1.5rem;
+    }
+
+    .weatherEmoji {
+        font-size: 5rem;
+    }
+
+    .errorDisplay {
+        font-size: 2rem;
+    }
 }
